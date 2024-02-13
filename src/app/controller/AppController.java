@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.model.task;
+import app.model.CheckAltitude;
 import app.utils.CustomException;
 
 import java.util.Scanner;
@@ -12,11 +12,11 @@ public class AppController {
     static Scanner scanner = new Scanner(System.in);
 
     public void Processing() {
-        System.out.println(message);
         while (true) {
+            System.out.println(message);
             try {
                 int altitude = scanner.nextInt();
-                task.checkAltitude(altitude, MIN_ALTITUDE, MAX_ALTITUDE);
+                CheckAltitude.checkAltitude(altitude, MIN_ALTITUDE, MAX_ALTITUDE);
                 System.out.println("Altitude is within valid range: " + altitude);
                 System.out.println("Do you want to continue? yes/no");
                 String continueInput = scanner.next();
